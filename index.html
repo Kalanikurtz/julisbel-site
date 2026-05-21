@@ -986,6 +986,143 @@ footer{
   .float-wa svg{width:20px; height:20px}
 }
 
+/* ============= PAIN POINTS ============= */
+.pain{
+  background:var(--cream-warm);
+  padding:120px 6vw;
+}
+.pain-header{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 60px;
+}
+.pain-header .section-eyebrow{justify-content:center; display:inline-flex}
+.pain-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:22px;
+  max-width:920px;
+  margin:0 auto 56px;
+}
+.pain-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  padding:28px 26px;
+  display:flex; align-items:center; gap:18px;
+  transition:transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+}
+.pain-card:hover{
+  transform:translateY(-3px);
+  border-color:var(--nude);
+  box-shadow:0 10px 30px rgba(61,77,65,0.08);
+}
+.pain-card .ico{
+  flex-shrink:0;
+  width:42px; height:42px;
+  border-radius:50%;
+  background:var(--paper);
+  border:1px solid var(--nude);
+  color:var(--nude-deep);
+  display:flex; align-items:center; justify-content:center;
+}
+.pain-card .ico svg{width:20px; height:20px}
+.pain-card p{
+  font-size:14.5px;
+  line-height:1.55;
+  color:var(--verde);
+  font-weight:400;
+  margin:0;
+}
+.pain-cta{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto;
+}
+.pain-cta .punch{
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(26px, 3.4vw, 38px);
+  line-height:1.25;
+  color:var(--verde-deep);
+  font-weight:500;
+  margin-bottom:30px;
+}
+.pain-cta .punch em{
+  font-style:italic; color:var(--nude-deep); font-weight:400;
+}
+
+@media (max-width:780px){
+  .pain{padding:88px 6vw}
+  .pain-grid{grid-template-columns:1fr; gap:14px; margin-bottom:42px}
+  .pain-card{padding:22px 20px}
+}
+
+/* ============= TESTIMONIALS ============= */
+.testimonials{
+  background:var(--paper);
+  padding:130px 6vw;
+}
+.test-header{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 66px;
+}
+.test-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+  max-width:1180px;
+  margin:0 auto;
+}
+.test-card{
+  background:var(--cream-warm);
+  border:1px solid var(--line);
+  padding:36px 30px;
+  display:flex; flex-direction:column; gap:18px;
+  transition:transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
+.test-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--nude);
+  box-shadow:0 14px 36px rgba(61,77,65,0.08);
+}
+.test-stars{
+  display:flex; gap:4px;
+  color:var(--nude-deep);
+}
+.test-stars svg{width:16px; height:16px; fill:currentColor}
+.test-quote{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:18px;
+  line-height:1.55;
+  color:var(--verde-deep);
+  font-weight:400;
+  flex:1;
+}
+.test-author{
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--nude-deep);
+  font-weight:500;
+  border-top:1px solid var(--line);
+  padding-top:16px;
+}
+.test-note{
+  text-align:center;
+  margin-top:48px;
+  font-size:12.5px;
+  color:var(--verde-soft);
+  font-style:italic;
+  letter-spacing:.04em;
+}
+
+@media (max-width:980px){
+  .test-grid{grid-template-columns:1fr; gap:16px; max-width:560px}
+  .testimonials{padding:90px 6vw}
+  .test-header{margin-bottom:42px}
+}
+
 /* ============= REVEAL ============= */
 .reveal{
   opacity:0;
@@ -1085,6 +1222,52 @@ footer{
     <div class="authority-item">
       Formadora<em>Cursos Profissionais</em>
     </div>
+  </div>
+</section>
+
+<!-- ============= PAIN POINTS ============= -->
+<section class="pain reveal">
+  <div class="pain-header">
+    <div class="section-eyebrow" style="justify-content:center">Você se identifica?</div>
+    <h2 class="section-title">Talvez você esteja vivendo <em>uma destas situações</em>.</h2>
+  </div>
+
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg>
+      </div>
+      <p>Sente vergonha das suas orelhas e evita prender o cabelo, fazer coque ou tirar fotos de perfil.</p>
+    </div>
+
+    <div class="pain-card">
+      <div class="ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>
+      </div>
+      <p>Já pensou em otoplastia tradicional, mas tem receio dos cortes, da cirurgia e da recuperação.</p>
+    </div>
+
+    <div class="pain-card">
+      <div class="ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6M4.22 4.22l4.24 4.24m7.08 7.08 4.24 4.24M1 12h6m10 0h6M4.22 19.78l4.24-4.24m7.08-7.08 4.24-4.24"/></svg>
+      </div>
+      <p>Seu lóbulo rasgou ou alargou com o tempo e não sabe qual procedimento resolve o seu caso.</p>
+    </div>
+
+    <div class="pain-card">
+      <div class="ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
+      </div>
+      <p>É profissional da saúde e quer se especializar em Otomodelação para ampliar sua atuação estética.</p>
+    </div>
+  </div>
+
+  <div class="pain-cta">
+    <p class="punch">O problema não é a sua orelha. É encontrar a <em>profissional certa</em> para cuidar dela.</p>
+    <a href="#contato" class="btn-primary">
+      Agendar Avaliação
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </section>
 
@@ -1254,6 +1437,54 @@ footer{
   </div>
 </section>
 
+<!-- ============= TESTIMONIALS ============= -->
+<section class="testimonials reveal">
+  <div class="test-header">
+    <div class="section-eyebrow" style="justify-content:center">Depoimentos</div>
+    <h2 class="section-title">O que dizem sobre o <em>meu trabalho</em>.</h2>
+  </div>
+
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="test-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+      </div>
+      <p class="test-quote">"Convivi a vida toda evitando coque e cabelo preso. Depois da Otomodelação com a Julisbel, é como se eu tivesse recebido uma parte de mim de volta — sem cortes, sem cicatrizes, com um cuidado raro."</p>
+      <div class="test-author">— Paciente · Otomodelação</div>
+    </div>
+
+    <div class="test-card">
+      <div class="test-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+      </div>
+      <p class="test-quote">"Levei minha bebê para a remodelação auricular ainda no primeiro mês. A escuta, a paciência e o jeito da Julisbel me deram a segurança que toda mãe procura. Resultado lindo."</p>
+      <div class="test-author">— Mãe · Orelhas Baby</div>
+    </div>
+
+    <div class="test-card">
+      <div class="test-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></svg>
+      </div>
+      <p class="test-quote">"Meu lóbulo já estava rasgado há anos e eu achava que só cirurgia resolveria. A lobuloplastia não cirúrgica com ATA foi rápida, sem dor — e hoje uso meus brincos preferidos de novo."</p>
+      <div class="test-author">— Paciente · Lobuloplastia</div>
+    </div>
+  </div>
+
+  <p class="test-note">Depoimentos ilustrativos. Em breve, relatos reais de pacientes atendidas no consultório.</p>
+</section>
+
 <!-- ============= EDITORIAL / PHILOSOPHY ============= -->
 <section class="editorial reveal">
   <div class="editorial-text">
@@ -1398,9 +1629,12 @@ footer{
   </div>
 </footer>
 
-<!-- ============= FLOATING WA ============= -->
-<a href="https://wa.me/5548988139991" class="float-wa" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.7-.3z"/><path d="M20.5 3.5C18.3 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 22c-1.9 0-3.7-.5-5.2-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.8 2 13.9 2 12 2 6.5 6.5 2 12 2c2.7 0 5.2 1 7.1 2.9C21 6.8 22 9.3 22 12c0 5.5-4.5 10-10 10z"/></svg>
+<!-- ============= FLOATING WA (com ícone de orelha) ============= -->
+<a href="https://wa.me/5548988139991?text=Olá%20Julisbel%2C%20gostaria%20de%20agendar%20uma%20avaliação." class="float-wa" aria-label="Falar com a Julisbel pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/>
+    <path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/>
+  </svg>
 </a>
 
 <script>
