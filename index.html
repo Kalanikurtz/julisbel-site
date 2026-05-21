@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Julisbel Kurtz — Enfermeira Esteta Especialista em Orelhas</title>
+<meta name="description" content="Enfermeira Esteta especialista em orelhas. Pioneira no Sul de Santa Catarina em Otomodelação com Fragilização da Cartilagem. Atendimento exclusivo por horário marcado." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --verde: #3D4D41;
+  --verde-deep: #2a3730;
+  --verde-soft: #5a6a5d;
+  --nude: #C4A880;
+  --nude-deep: #a88a5f;
+  --nude-soft: #d9c4a3;
+  --cream: #E6E5DD;
+  --cream-warm: #ede8db;
+  --paper: #f4f1e8;
+  --ink: #1a221c;
+  --line: rgba(61,77,65,0.12);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter', sans-serif;
+  background:var(--paper);
+  color:var(--verde);
+  font-weight:300;
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  font-size:15px;
+}
+
+img{max-width:100%; display:block}
+
+/* ============= TOP BAR ============= */
+.topbar{
+  background:var(--verde-deep);
+  color:var(--cream);
+  padding:9px 6vw;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  display:flex; justify-content:space-between; align-items:center;
+  font-weight:400;
+}
+.topbar .left{opacity:.7}
+.topbar .right{display:flex; gap:24px; align-items:center}
+.topbar a{color:var(--nude-soft); text-decoration:none; transition:color .3s}
+.topbar a:hover{color:var(--cream)}
+@media (max-width:680px){
+  .topbar .left{display:none}
+  .topbar{justify-content:center}
+}
+
+/* ============= NAVIGATION ============= */
+nav{
+  position:sticky; top:0; z-index:100;
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  padding:22px 6vw;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:40px;
+  transition:padding .3s, background .3s;
+}
+nav.scrolled{
+  padding:14px 6vw;
+  background:rgba(244,241,232,0.96);
+  backdrop-filter:blur(14px);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond', serif;
+  font-size:24px;
+  letter-spacing:.24em;
+  color:var(--verde);
+  text-transform:uppercase;
+  font-weight:400;
+  text-decoration:none;
+  text-align:center;
+  line-height:1;
+}
+.nav-logo .sub{
+  display:block;
+  font-family:'Inter', sans-serif;
+  font-size:8px;
+  letter-spacing:.4em;
+  color:var(--nude-deep);
+  margin-top:6px;
+  font-weight:400;
+}
+.nav-links{
+  display:flex; gap:36px; list-style:none;
+  justify-content:flex-end;
+}
+.nav-actions{
+  display:flex; gap:18px; align-items:center;
+  justify-content:flex-start;
+}
+.nav-links a{
+  text-decoration:none;
+  color:var(--verde);
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:400;
+  position:relative;
+  transition:color .3s;
+}
+.nav-links a:hover{color:var(--nude-deep)}
+.nav-cta{
+  background:transparent;
+  color:var(--verde);
+  padding:11px 24px;
+  border:1px solid var(--verde);
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  transition:all .3s;
+  font-weight:400;
+}
+.nav-cta:hover{background:var(--verde); color:var(--cream)}
+.menu-toggle{display:none; background:none; border:none; cursor:pointer; color:var(--verde); font-size:22px}
+
+@media (max-width:980px){
+  nav{grid-template-columns:auto 1fr auto; padding:16px 6vw}
+  .nav-logo{text-align:left; font-size:20px}
+  .nav-links{
+    position:fixed; top:100px; right:0;
+    flex-direction:column; gap:0;
+    background:var(--paper);
+    width:100%; padding:0 6vw;
+    max-height:0; overflow:hidden;
+    transition:max-height .5s ease, padding .5s ease;
+    border-bottom:1px solid var(--line);
+    z-index:99;
+  }
+  .nav-links.open{max-height:500px; padding:24px 6vw 36px}
+  .nav-links li{padding:16px 0; border-bottom:1px solid var(--line)}
+  .nav-actions{justify-content:flex-end}
+  .nav-cta{padding:9px 16px; font-size:10px}
+  .menu-toggle{display:block; order:3}
+}
+
+/* ============= HERO ============= */
+.hero{
+  background:var(--paper);
+  position:relative;
+  padding:90px 6vw 0;
+  min-height:calc(100vh - 100px);
+  display:grid;
+  grid-template-columns:1.05fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.hero-content{
+  position:relative;
+  padding-bottom:60px;
+}
+.hero-mark{
+  display:flex; align-items:center; gap:14px;
+  margin-bottom:36px;
+  font-size:10px; letter-spacing:.32em; text-transform:uppercase;
+  color:var(--nude-deep); font-weight:500;
+}
+.hero-mark::before{content:''; width:48px; height:1px; background:var(--nude-deep)}
+
+.hero h1{
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(48px, 6.5vw, 86px);
+  font-weight:400;
+  line-height:1;
+  color:var(--verde-deep);
+  letter-spacing:-.015em;
+  margin-bottom:36px;
+}
+.hero h1 em{
+  font-style:italic;
+  color:var(--nude-deep);
+  font-weight:300;
+  display:block;
+}
+.hero-sub{
+  font-size:16px; line-height:1.8;
+  color:var(--verde-soft);
+  max-width:480px; margin-bottom:48px;
+  font-weight:300;
+}
+.hero-meta{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:0;
+  padding:28px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  margin-bottom:42px;
+}
+.hero-meta-item{
+  padding:0 16px;
+  border-right:1px solid var(--line);
+}
+.hero-meta-item:last-child{border-right:none}
+.hero-meta-item:first-child{padding-left:0}
+.hero-meta-item .num{
+  font-family:'Cormorant Garamond', serif;
+  font-size:36px;
+  line-height:1;
+  color:var(--verde-deep);
+  font-weight:500;
+}
+.hero-meta-item .label{
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--verde-soft);
+  margin-top:8px;
+  font-weight:400;
+}
+.hero-cta-group{
+  display:flex; gap:18px; flex-wrap:wrap; align-items:center;
+}
+.btn-primary{
+  background:var(--verde-deep);
+  color:var(--cream);
+  padding:18px 36px;
+  border:1px solid var(--verde-deep);
+  font-size:11px; letter-spacing:.26em;
+  text-transform:uppercase; font-weight:500;
+  cursor:pointer; text-decoration:none;
+  display:inline-flex; align-items:center; gap:14px;
+  transition:all .4s ease;
+}
+.btn-primary:hover{background:transparent; color:var(--verde-deep)}
+.btn-primary svg{width:13px; height:13px}
+.btn-text{
+  color:var(--verde);
+  text-decoration:none;
+  font-size:11px; letter-spacing:.24em;
+  text-transform:uppercase;
+  font-weight:400;
+  display:inline-flex; align-items:center; gap:10px;
+  padding-bottom:4px;
+  border-bottom:1px solid var(--verde);
+  transition:all .3s;
+}
+.btn-text:hover{color:var(--nude-deep); border-color:var(--nude-deep); gap:16px}
+
+.hero-image{
+  position:relative;
+  height:calc(100vh - 100px);
+  min-height:600px;
+  max-height:820px;
+}
+.hero-image::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, transparent 60%, rgba(26,34,28,0.15));
+  pointer-events:none;
+}
+.hero-image img{
+  width:100%; height:100%;
+  object-fit:cover; object-position:center 20%;
+  filter:grayscale(8%) contrast(1.02);
+}
+.hero-image-caption{
+  position:absolute;
+  bottom:30px; left:30px; right:30px;
+  display:flex; justify-content:space-between; align-items:flex-end;
+  color:var(--cream);
+  font-size:10px; letter-spacing:.28em; text-transform:uppercase;
+  font-weight:400;
+  z-index:2;
+}
+.hero-image-caption .right{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:15px;
+  letter-spacing:.02em;
+  text-transform:none;
+  color:var(--nude-soft);
+}
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr; gap:60px; padding-top:60px}
+  .hero-image{height:560px; min-height:auto}
+}
+
+/* ============= SECTION BASE ============= */
+section{padding:130px 6vw}
+.section-eyebrow{
+  display:flex; align-items:center; gap:14px;
+  font-size:10px; letter-spacing:.32em; text-transform:uppercase;
+  color:var(--nude-deep); margin-bottom:28px;
+  font-weight:500;
+}
+.section-eyebrow::before{content:''; width:36px; height:1px; background:var(--nude-deep)}
+.section-title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(40px, 5vw, 62px);
+  font-weight:400; line-height:1.1;
+  color:var(--verde-deep); margin-bottom:30px;
+  letter-spacing:-.012em;
+}
+.section-title em{font-style:italic; color:var(--nude-deep); font-weight:300}
+
+/* ============= AUTHORITY STRIP ============= */
+.authority{
+  background:var(--cream);
+  padding:40px 6vw;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.authority-grid{
+  display:grid;
+  grid-template-columns:auto 1fr auto 1fr auto 1fr auto;
+  gap:36px;
+  align-items:center;
+  max-width:1200px;
+  margin:0 auto;
+}
+.authority-item{
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--verde);
+  font-weight:500;
+  text-align:center;
+}
+.authority-item em{
+  display:block;
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:16px;
+  color:var(--nude-deep);
+  letter-spacing:.02em;
+  text-transform:none;
+  font-weight:400;
+  margin-top:6px;
+}
+.authority-divider{
+  width:1px; height:40px;
+  background:var(--line);
+}
+@media (max-width:880px){
+  .authority-grid{
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .authority-divider{display:none}
+}
+
+/* ============= ABOUT ============= */
+.about{
+  background:var(--paper);
+  display:grid; grid-template-columns:1fr 1.15fr;
+  gap:90px; align-items:center;
+}
+.about-image-wrap{position:relative}
+.about-image{
+  width:100%; aspect-ratio:4/5; object-fit:cover;
+  filter:grayscale(10%);
+}
+.about-image-label{
+  position:absolute;
+  bottom:24px; left:24px;
+  background:var(--paper);
+  padding:14px 22px;
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--verde);
+  font-weight:500;
+}
+.about-image-label em{
+  display:block;
+  font-family:'Cormorant Garamond', serif;
+  font-size:14px;
+  font-style:italic;
+  color:var(--nude-deep);
+  text-transform:none;
+  letter-spacing:.02em;
+  margin-top:4px;
+  font-weight:400;
+}
+.about-text .lead{
+  font-family:'Cormorant Garamond', serif;
+  font-size:24px; font-style:italic;
+  color:var(--verde-deep); line-height:1.45;
+  margin-bottom:30px;
+  font-weight:400;
+}
+.about-text p{
+  font-size:15px; line-height:1.85;
+  color:var(--verde-soft); margin-bottom:22px;
+  font-weight:300;
+}
+.about-text p strong{
+  color:var(--verde-deep);
+  font-weight:500;
+}
+.about-signature{
+  margin-top:42px;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:20px;
+}
+.about-signature .name{
+  font-family:'Cormorant Garamond', serif;
+  font-size:24px;
+  font-style:italic;
+  color:var(--verde-deep);
+  font-weight:500;
+}
+.about-signature .role{
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--nude-deep);
+  margin-top:4px;
+}
+@media (max-width:880px){
+  .about{grid-template-columns:1fr; gap:60px}
+}
+
+/* ============= PROCEDURES ============= */
+.procedures{
+  background:var(--verde-deep);
+  color:var(--cream);
+  padding:130px 6vw;
+}
+.procedures .section-eyebrow{color:var(--nude)}
+.procedures .section-eyebrow::before{background:var(--nude)}
+.procedures .section-title{color:var(--cream)}
+.procedures .section-title em{color:var(--nude)}
+
+.proc-header{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:end;
+  margin-bottom:90px;
+}
+.proc-intro{
+  color:rgba(230,229,221,0.7);
+  font-size:15px; line-height:1.8;
+  font-weight:300;
+  max-width:480px;
+}
+@media (max-width:880px){
+  .proc-header{grid-template-columns:1fr; gap:30px}
+}
+
+.proc-list{
+  display:flex;
+  flex-direction:column;
+}
+.proc-item{
+  display:grid;
+  grid-template-columns:80px 1fr 1.3fr auto;
+  gap:60px;
+  padding:40px 0;
+  border-top:1px solid rgba(196,168,128,0.18);
+  align-items:start;
+  cursor:pointer;
+  transition:all .5s ease;
+  position:relative;
+}
+.proc-item:last-child{border-bottom:1px solid rgba(196,168,128,0.18)}
+.proc-item:hover{padding-left:20px}
+.proc-num{
+  font-family:'Cormorant Garamond', serif;
+  font-size:32px;
+  color:var(--nude);
+  font-weight:400;
+  line-height:1;
+  letter-spacing:.02em;
+}
+.proc-title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:30px;
+  font-weight:500;
+  color:var(--cream);
+  line-height:1.15;
+  letter-spacing:-.005em;
+}
+.proc-title em{
+  font-style:italic;
+  color:var(--nude);
+  font-weight:300;
+}
+.proc-desc{
+  color:rgba(230,229,221,0.65);
+  font-size:14px;
+  line-height:1.85;
+  font-weight:300;
+}
+.proc-desc .tag{
+  display:inline-block;
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--nude);
+  margin-top:14px;
+  font-weight:500;
+  padding-top:12px;
+  border-top:1px solid rgba(196,168,128,0.2);
+  width:100%;
+}
+.proc-arrow{
+  color:var(--nude);
+  width:34px; height:34px;
+  border:1px solid rgba(196,168,128,0.3);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .4s;
+  flex-shrink:0;
+}
+.proc-item:hover .proc-arrow{
+  background:var(--nude);
+  color:var(--verde-deep);
+  border-color:var(--nude);
+}
+.proc-arrow svg{width:14px; height:14px}
+
+@media (max-width:880px){
+  .proc-item{
+    grid-template-columns:auto 1fr;
+    gap:24px;
+  }
+  .proc-desc{grid-column:1 / -1; margin-top:12px}
+  .proc-arrow{grid-row:1; grid-column:2; justify-self:end}
+  .proc-item:hover{padding-left:0}
+}
+
+/* ============= EXPERIENCE / PROCESS ============= */
+.experience{
+  background:var(--cream);
+  text-align:center;
+}
+.experience-header{
+  max-width:680px;
+  margin:0 auto 80px;
+  text-align:center;
+}
+.experience-header .section-eyebrow{
+  justify-content:center;
+  padding-bottom:6px;
+  border-bottom:1px solid var(--nude-deep);
+  display:inline-flex;
+  margin-bottom:28px;
+}
+.experience-header .section-eyebrow::before{content:none}
+.experience-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.experience-item{
+  padding:50px 30px;
+  border-right:1px solid var(--line);
+  text-align:left;
+  transition:background .3s;
+}
+.experience-item:last-child{border-right:none}
+.experience-item:hover{background:var(--cream-warm)}
+.experience-step{
+  font-family:'Cormorant Garamond', serif;
+  font-size:14px;
+  color:var(--nude-deep);
+  font-style:italic;
+  margin-bottom:20px;
+  font-weight:400;
+}
+.experience-item h4{
+  font-family:'Cormorant Garamond', serif;
+  font-size:24px;
+  font-weight:500;
+  color:var(--verde-deep);
+  margin-bottom:14px;
+  line-height:1.2;
+}
+.experience-item p{
+  font-size:13px;
+  line-height:1.7;
+  color:var(--verde-soft);
+  font-weight:300;
+}
+@media (max-width:880px){
+  .experience-grid{grid-template-columns:1fr 1fr}
+  .experience-item{padding:36px 24px}
+  .experience-item:nth-child(2){border-right:none}
+  .experience-item:nth-child(1),
+  .experience-item:nth-child(2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:560px){
+  .experience-grid{grid-template-columns:1fr}
+  .experience-item{border-right:none; border-bottom:1px solid var(--line)}
+  .experience-item:last-child{border-bottom:none}
+}
+
+/* ============= EDITORIAL / PHILOSOPHY ============= */
+.editorial{
+  background:var(--paper);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:90px;
+  align-items:center;
+}
+.editorial-text .quote{
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(30px, 3.5vw, 44px);
+  font-style:italic;
+  line-height:1.4;
+  color:var(--verde-deep);
+  font-weight:400;
+  margin-bottom:40px;
+  position:relative;
+  padding-left:36px;
+}
+.editorial-text .quote::before{
+  content:'';
+  position:absolute;
+  left:0; top:18px;
+  width:20px; height:1px;
+  background:var(--nude-deep);
+}
+.editorial-text p{
+  font-size:15px;
+  line-height:1.85;
+  color:var(--verde-soft);
+  margin-bottom:18px;
+  font-weight:300;
+  max-width:480px;
+}
+.editorial-image{
+  position:relative;
+  aspect-ratio:4/5;
+}
+.editorial-image img{
+  width:100%; height:100%; object-fit:cover;
+  filter:grayscale(15%);
+}
+@media (max-width:880px){
+  .editorial{grid-template-columns:1fr; gap:50px}
+}
+
+/* ============= INSTAGRAM ============= */
+.instagram-section{background:var(--paper)}
+.ig-header{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:40px;
+  align-items:end;
+  margin-bottom:60px;
+  padding-bottom:36px;
+  border-bottom:1px solid var(--line);
+}
+.ig-handle{
+  text-align:right;
+}
+.ig-handle .at{
+  font-family:'Cormorant Garamond', serif;
+  font-size:24px;
+  font-style:italic;
+  color:var(--nude-deep);
+  display:block;
+  margin-bottom:8px;
+}
+.ig-handle a{
+  color:var(--verde);
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  border-bottom:1px solid var(--verde);
+  padding-bottom:3px;
+  transition:all .3s;
+}
+.ig-handle a:hover{color:var(--nude-deep); border-color:var(--nude-deep)}
+
+.ig-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:6px;
+}
+.ig-item{
+  aspect-ratio:1;
+  overflow:hidden;
+  position:relative;
+  cursor:pointer;
+  text-decoration:none;
+}
+.ig-item img{
+  width:100%; height:100%; object-fit:cover;
+  transition:transform 1.2s cubic-bezier(.2,.8,.2,1);
+  filter:grayscale(8%);
+}
+.ig-item:hover img{transform:scale(1.06); filter:grayscale(0)}
+.ig-item::after{
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, transparent 50%, rgba(26,34,28,0.55));
+  opacity:0;
+  transition:opacity .5s;
+}
+.ig-item:hover::after{opacity:1}
+.ig-item .ig-tag{
+  position:absolute;
+  bottom:18px; left:18px;
+  color:var(--cream);
+  font-size:9px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  opacity:0;
+  transform:translateY(8px);
+  transition:all .5s;
+  z-index:2;
+  font-weight:500;
+}
+.ig-item:hover .ig-tag{opacity:1; transform:translateY(0)}
+@media (max-width:780px){
+  .ig-grid{grid-template-columns:repeat(2, 1fr)}
+}
+
+/* ============= CONTACT ============= */
+.contact{
+  background:var(--verde-deep);
+  color:var(--cream);
+  padding:130px 6vw;
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:90px;
+  align-items:start;
+}
+.contact .section-eyebrow{color:var(--nude)}
+.contact .section-eyebrow::before{background:var(--nude)}
+.contact .section-title{color:var(--cream)}
+.contact .section-title em{color:var(--nude)}
+.contact-text p{
+  color:rgba(230,229,221,0.7);
+  font-size:15px;
+  line-height:1.85;
+  margin-bottom:24px;
+  font-weight:300;
+  max-width:460px;
+}
+.contact-info{
+  margin-top:50px;
+  display:flex;
+  flex-direction:column;
+}
+.contact-info-item{
+  padding:24px 0;
+  border-top:1px solid rgba(196,168,128,0.2);
+  display:grid;
+  grid-template-columns:100px 1fr auto;
+  gap:30px;
+  align-items:center;
+  text-decoration:none;
+  color:var(--cream);
+  transition:padding .4s, color .4s;
+}
+.contact-info-item:last-child{border-bottom:1px solid rgba(196,168,128,0.2)}
+.contact-info-item:hover{padding-left:12px; color:var(--nude)}
+.contact-info-item .label{
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--nude);
+  font-weight:500;
+}
+.contact-info-item .value{
+  font-family:'Cormorant Garamond', serif;
+  font-size:24px;
+  font-weight:500;
+  letter-spacing:.005em;
+}
+.contact-info-item .arrow{
+  color:var(--nude);
+  font-size:18px;
+}
+
+.contact-card{
+  background:rgba(230,229,221,0.04);
+  border:1px solid rgba(196,168,128,0.2);
+  padding:60px 50px;
+}
+.contact-card-eyebrow{
+  font-size:10px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--nude);
+  margin-bottom:22px;
+  font-weight:500;
+}
+.contact-card h3{
+  font-family:'Cormorant Garamond', serif;
+  font-size:36px;
+  font-weight:400;
+  line-height:1.15;
+  color:var(--cream);
+  margin-bottom:18px;
+}
+.contact-card h3 em{color:var(--nude); font-style:italic; font-weight:300}
+.contact-card p{
+  color:rgba(230,229,221,0.7);
+  font-size:14px;
+  line-height:1.8;
+  margin-bottom:36px;
+  font-weight:300;
+}
+.contact-card .details{
+  list-style:none;
+  margin-bottom:36px;
+  padding-top:24px;
+  border-top:1px solid rgba(196,168,128,0.15);
+}
+.contact-card .details li{
+  font-size:12px;
+  letter-spacing:.04em;
+  color:rgba(230,229,221,0.75);
+  padding:10px 0;
+  display:flex; gap:12px; align-items:flex-start;
+  font-weight:300;
+}
+.contact-card .details li::before{
+  content:'—';
+  color:var(--nude);
+  flex-shrink:0;
+}
+.whatsapp-btn{
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  width:100%;
+  background:var(--nude);
+  color:var(--verde-deep);
+  padding:20px 28px;
+  text-decoration:none;
+  font-size:11px; letter-spacing:.28em;
+  text-transform:uppercase; font-weight:600;
+  transition:all .4s ease;
+  border:1px solid var(--nude);
+}
+.whatsapp-btn:hover{
+  background:transparent;
+  color:var(--nude);
+}
+.whatsapp-btn svg{width:18px; height:18px}
+
+@media (max-width:880px){
+  .contact-grid{grid-template-columns:1fr; gap:60px}
+  .contact-card{padding:42px 30px}
+  .contact-info-item{
+    grid-template-columns:1fr auto;
+    gap:14px;
+  }
+  .contact-info-item .label{grid-column:1 / -1; margin-bottom:6px}
+}
+
+/* ============= FOOTER ============= */
+footer{
+  background:var(--ink);
+  color:rgba(230,229,221,0.5);
+  padding:80px 6vw 36px;
+}
+.foot-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:60px;
+  margin-bottom:60px;
+  padding-bottom:50px;
+  border-bottom:1px solid rgba(230,229,221,0.08);
+}
+.foot-logo{
+  font-family:'Cormorant Garamond', serif;
+  font-size:30px;
+  letter-spacing:.2em;
+  color:var(--cream);
+  margin-bottom:14px;
+  text-transform:uppercase;
+  font-weight:400;
+}
+.foot-tagline{
+  font-size:11px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--nude);
+  margin-bottom:22px;
+  font-weight:500;
+}
+.foot-desc{
+  font-size:13px;
+  line-height:1.8;
+  color:rgba(230,229,221,0.55);
+  max-width:340px;
+  font-weight:300;
+}
+.foot-col h5{
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--nude);
+  margin-bottom:22px;
+  font-weight:500;
+}
+.foot-col ul{list-style:none}
+.foot-col li{padding:6px 0}
+.foot-col a{
+  color:rgba(230,229,221,0.65);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:300;
+  transition:color .3s;
+}
+.foot-col a:hover{color:var(--nude)}
+.foot-bottom{
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:16px;
+  font-size:11px; letter-spacing:.16em;
+  color:rgba(230,229,221,0.4);
+  text-transform:uppercase;
+  font-weight:400;
+}
+@media (max-width:880px){
+  .foot-grid{grid-template-columns:1fr 1fr; gap:40px}
+  .foot-grid > div:first-child{grid-column:1 / -1}
+}
+@media (max-width:560px){
+  .foot-grid{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column; text-align:center}
+}
+
+/* ============= FLOATING WHATSAPP ============= */
+.float-wa{
+  position:fixed; bottom:30px; right:30px;
+  width:56px; height:56px;
+  background:var(--verde-deep);
+  border:1px solid var(--nude);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--nude);
+  text-decoration:none;
+  z-index:99;
+  transition:all .3s ease;
+}
+.float-wa:hover{
+  background:var(--nude);
+  color:var(--verde-deep);
+  transform:scale(1.05);
+}
+.float-wa svg{width:24px; height:24px}
+
+/* ============= REVEAL ============= */
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity 1.1s cubic-bezier(.2,.8,.2,1), transform 1.1s cubic-bezier(.2,.8,.2,1);
+}
+.reveal.visible{opacity:1; transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- ============= TOP BAR ============= -->
+<div class="topbar">
+  <div class="left">Atendimento exclusivo por horário marcado · Sul de Santa Catarina</div>
+  <div class="right">
+    <a href="https://wa.me/5548881399910">(48) 8813-9991</a>
+    <span>·</span>
+    <a href="https://www.instagram.com/julisbelkurtz" target="_blank">@julisbelkurtz</a>
+  </div>
+</div>
+
+<!-- ============= NAVIGATION ============= -->
+<nav id="nav">
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#procedimentos">Procedimentos</a></li>
+    <li><a href="#experiencia">Experiência</a></li>
+    <li><a href="#instagram">Instagram</a></li>
+  </ul>
+  <a href="#topo" class="nav-logo">
+    Julisbel Kurtz
+    <span class="sub">Enfermeira Esteta</span>
+  </a>
+  <div class="nav-actions">
+    <a href="#contato" class="nav-cta">Agendar</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- ============= HERO ============= -->
+<header class="hero" id="topo">
+  <div class="hero-content">
+    <div class="hero-mark">Enfermeira Esteta · Especialista em Orelhas</div>
+    <h1>Técnica, escuta<br/>e <em>autoestima.</em></h1>
+    <p class="hero-sub">
+      Pioneira no Sul de Santa Catarina em Otomodelação com Fragilização da Cartilagem. Uma trajetória de duas décadas dedicada ao cuidado humano, ao detalhe técnico e à transformação que começa no espelho.
+    </p>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="num">16</div>
+        <div class="label">Anos<br/>Enfermagem</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="num">20</div>
+        <div class="label">Anos<br/>Saúde Pública</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="num">1ª</div>
+        <div class="label">Sul de SC<br/>Otomodelação</div>
+      </div>
+    </div>
+
+    <div class="hero-cta-group">
+      <a href="#contato" class="btn-primary">
+        Agendar Avaliação
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#procedimentos" class="btn-text">Conhecer Procedimentos</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="assets/DSC01662.jpg" alt="Julisbel Kurtz, Enfermeira Esteta especialista em orelhas" />
+    <div class="hero-image-caption">
+      <span>Atendimento · 2026</span>
+      <span class="right">Julisbel Kurtz</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============= AUTHORITY ============= -->
+<section class="authority" style="padding:36px 6vw">
+  <div class="authority-grid">
+    <div class="authority-item">
+      Formação<em>Enfermagem</em>
+    </div>
+    <div class="authority-divider"></div>
+    <div class="authority-item">
+      Especialização<em>Estética</em>
+    </div>
+    <div class="authority-divider"></div>
+    <div class="authority-item">
+      Técnica<em>Otomodelação</em>
+    </div>
+    <div class="authority-divider"></div>
+    <div class="authority-item">
+      Formadora<em>Cursos Profissionais</em>
+    </div>
+  </div>
+</section>
+
+<!-- ============= ABOUT ============= -->
+<section class="about reveal" id="sobre">
+  <div class="about-image-wrap">
+    <img src="assets/DSC06122.jpg" alt="Julisbel Kurtz, retrato profissional" class="about-image" />
+    <div class="about-image-label">
+      Sobre<em>Julisbel Kurtz</em>
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="section-eyebrow">Trajetória</div>
+    <h2 class="section-title">Uma vida dedicada ao <em>cuidar</em>.</h2>
+    <p class="lead">
+      Mais do que um procedimento, é a entrega da autoestima — da leveza de quem finalmente se reconhece no espelho.
+    </p>
+    <p>
+      Sou <strong>Julisbel Kurtz</strong>, Enfermeira Esteta especialista em orelhas. Há 16 anos atuando na enfermagem, com 20 anos dedicados à saúde pública, sou pioneira na região Sul de Santa Catarina em <strong>Otomodelação com Fragilização da Cartilagem</strong>.
+    </p>
+    <p>
+      Meu trabalho nasce da escuta. Cada orelha tem história, cada paciente carrega um anseio. Trabalho com técnica refinada e protocolos atualizados — mas também com tempo, atenção e acolhimento. É na intersecção entre ciência e sensibilidade que mora a transformação que entrego.
+    </p>
+    <p>
+      Além dos atendimentos exclusivos, formo novos profissionais através de cursos especializados, multiplicando a excelência da técnica.
+    </p>
+    <div class="about-signature">
+      <div>
+        <div class="name">Julisbel Kurtz</div>
+        <div class="role">Enfermeira Esteta · Especialista em Orelhas</div>
+      </div>
+      <a href="#contato" class="btn-text">Agendar Conversa</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= PROCEDURES ============= -->
+<section class="procedures reveal" id="procedimentos">
+  <div class="proc-header">
+    <div>
+      <div class="section-eyebrow">Procedimentos</div>
+      <h2 class="section-title">Técnica, segurança e <em>resultado</em>.</h2>
+    </div>
+    <p class="proc-intro">
+      Cada procedimento é planejado individualmente, após avaliação criteriosa do caso. Aqui você encontra os tratamentos disponíveis no consultório — todos conduzidos com protocolos modernos e abordagem humanizada.
+    </p>
+  </div>
+
+  <div class="proc-list">
+    <div class="proc-item">
+      <div class="proc-num">01</div>
+      <div>
+        <h3 class="proc-title">Otomodelação <em>Definitiva</em></h3>
+      </div>
+      <div class="proc-desc">
+        Procedimento estético não cirúrgico que corrige ou reposiciona a orelha de forma permanente, sem cortes e sem otoplastia tradicional. Com a fragilização da cartilagem, a orelha cicatriza no novo formato — livre do incômodo de forma definitiva. Indicado para orelhas de abano em adultos.
+        <span class="tag">Sem cirurgia · Resultado permanente</span>
+      </div>
+      <div class="proc-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+
+    <div class="proc-item">
+      <div class="proc-num">02</div>
+      <div>
+        <h3 class="proc-title">Remodelação de <em>Orelhas Baby</em></h3>
+      </div>
+      <div class="proc-desc">
+        Técnica não cirúrgica realizada com molde auricular para corrigir a forma das orelhas ainda nos primeiros meses de vida, quando a cartilagem está mais maleável. Indolor, eficaz e indicada para uma janela específica do desenvolvimento do bebê.
+        <span class="tag">Indicado para recém-nascidos</span>
+      </div>
+      <div class="proc-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+
+    <div class="proc-item">
+      <div class="proc-num">03</div>
+      <div>
+        <h3 class="proc-title">Lobuloplastia <em>Cirúrgica</em></h3>
+      </div>
+      <div class="proc-desc">
+        Procedimento realizado para corrigir furos rasgados, alargados ou deformidades do lóbulo, devolvendo formato, simetria e resistência para o uso futuro de brincos. Indicado para casos em que há perda significativa de tecido.
+        <span class="tag">Correção definitiva</span>
+      </div>
+      <div class="proc-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+
+    <div class="proc-item">
+      <div class="proc-num">04</div>
+      <div>
+        <h3 class="proc-title">Lobuloplastia <em>Não Cirúrgica</em></h3>
+      </div>
+      <div class="proc-desc">
+        Realizada com ATA — procedimento rápido, seguro e sem cortes para corrigir o lóbulo já rasgado ou alongado pelo tempo ou pelo uso de brincos pesados. Sem anestesia, sem pontos, sem repouso. Ao final, o lóbulo fica pronto para receber um novo furo, se desejar.
+        <span class="tag">Sem cortes · Sem anestesia</span>
+      </div>
+      <div class="proc-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+
+    <div class="proc-item">
+      <div class="proc-num">05</div>
+      <div>
+        <h3 class="proc-title">Preenchimento <em>de Lóbulo</em></h3>
+      </div>
+      <div class="proc-desc">
+        Procedimento minimamente invasivo com Ácido Hialurônico para restaurar volume, firmeza e melhorar o aspecto do lóbulo da orelha. Indicado para lóbulos finos, flácidos ou que perderam preenchimento natural com o tempo.
+        <span class="tag">Ácido hialurônico</span>
+      </div>
+      <div class="proc-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+
+    <div class="proc-item">
+      <div class="proc-num">06</div>
+      <div>
+        <h3 class="proc-title">Perfuração <em>Humanizada</em></h3>
+      </div>
+      <div class="proc-desc">
+        Furos em lóbulo e piercings em cartilagem realizados com técnicas que priorizam segurança, conforto e redução do trauma. Dor amenizada, protocolos avançados de cicatrização e acompanhamento profissional do início ao fim.
+        <span class="tag">Lóbulo & cartilagem</span>
+      </div>
+      <div class="proc-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= EXPERIENCE / PROCESS ============= -->
+<section class="experience reveal" id="experiencia">
+  <div class="experience-header">
+    <div class="section-eyebrow">A Experiência</div>
+    <h2 class="section-title">Cada paciente, um <em>cuidado único</em>.</h2>
+    <p style="font-size:15px; color:var(--verde-soft); max-width:520px; margin:0 auto; line-height:1.8; font-weight:300">
+      Do primeiro contato ao acompanhamento pós-procedimento — um processo desenhado para acolher, esclarecer e entregar resultado.
+    </p>
+  </div>
+
+  <div class="experience-grid">
+    <div class="experience-item">
+      <div class="experience-step">— Etapa 01</div>
+      <h4>Avaliação</h4>
+      <p>Conversa individual para entender expectativas, histórico e indicar o procedimento ideal para o seu caso.</p>
+    </div>
+    <div class="experience-item">
+      <div class="experience-step">— Etapa 02</div>
+      <h4>Planejamento</h4>
+      <p>Definição da técnica, do tempo necessário e dos cuidados específicos — sem surpresas, com total transparência.</p>
+    </div>
+    <div class="experience-item">
+      <div class="experience-step">— Etapa 03</div>
+      <h4>Procedimento</h4>
+      <p>Realizado em ambiente controlado, com protocolos rigorosos de segurança, conforto e técnica refinada.</p>
+    </div>
+    <div class="experience-item">
+      <div class="experience-step">— Etapa 04</div>
+      <h4>Acompanhamento</h4>
+      <p>Suporte completo no pós-procedimento, com orientações claras e disponibilidade para qualquer dúvida.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============= EDITORIAL / PHILOSOPHY ============= -->
+<section class="editorial reveal">
+  <div class="editorial-text">
+    <div class="section-eyebrow">Filosofia</div>
+    <p class="quote">
+      A excelência técnica é o ponto de partida — não o destino. O que diferencia é o tempo que se dedica a ouvir.
+    </p>
+    <p>
+      Acredito que a estética verdadeira não está no procedimento isolado, mas na confiança construída entre profissional e paciente. É esse vínculo que sustenta o resultado.
+    </p>
+    <p>
+      Por isso, cada atendimento é exclusivo. Sem pressa, sem fórmulas. Cada orelha tem sua arquitetura, cada paciente sua história.
+    </p>
+  </div>
+  <div class="editorial-image">
+    <img src="assets/DSC01671.jpg" alt="Julisbel Kurtz, retrato editorial" />
+  </div>
+</section>
+
+<!-- ============= INSTAGRAM ============= -->
+<section class="instagram-section reveal" id="instagram">
+  <div class="ig-header">
+    <div>
+      <div class="section-eyebrow">Instagram</div>
+      <h2 class="section-title">Bastidores e <em>resultados</em>.</h2>
+    </div>
+    <div class="ig-handle">
+      <span class="at">@julisbelkurtz</span>
+      <a href="https://www.instagram.com/julisbelkurtz" target="_blank">Seguir no Instagram</a>
+    </div>
+  </div>
+
+  <div class="ig-grid">
+    <a href="https://www.instagram.com/julisbelkurtz" target="_blank" class="ig-item">
+      <img src="assets/DSC06152.jpg" alt="Julisbel - Editorial" />
+      <span class="ig-tag">Editorial</span>
+    </a>
+    <a href="https://www.instagram.com/julisbelkurtz" target="_blank" class="ig-item">
+      <img src="assets/DSC06155.jpg" alt="Julisbel" />
+      <span class="ig-tag">Bastidores</span>
+    </a>
+    <a href="https://www.instagram.com/julisbelkurtz" target="_blank" class="ig-item">
+      <img src="assets/DSC01671.jpg" alt="Julisbel" />
+      <span class="ig-tag">Retrato</span>
+    </a>
+    <a href="https://www.instagram.com/julisbelkurtz" target="_blank" class="ig-item">
+      <img src="assets/DSC01662.jpg" alt="Julisbel" />
+      <span class="ig-tag">Atendimento</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============= CONTACT ============= -->
+<section class="contact reveal" id="contato">
+  <div class="contact-grid">
+    <div class="contact-text">
+      <div class="section-eyebrow">Agendamento</div>
+      <h2 class="section-title">Conversemos sobre <em>o seu caso</em>.</h2>
+      <p>
+        Cada orelha tem sua história. Agende uma avaliação personalizada e descubra qual procedimento é ideal para você. Atendimento exclusivo, por horário marcado.
+      </p>
+
+      <div class="contact-info">
+        <a href="https://wa.me/5548881399910" class="contact-info-item">
+          <span class="label">WhatsApp</span>
+          <span class="value">(48) 8813-9991</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="https://www.instagram.com/julisbelkurtz" target="_blank" class="contact-info-item">
+          <span class="label">Instagram</span>
+          <span class="value">@julisbelkurtz</span>
+          <span class="arrow">→</span>
+        </a>
+        <div class="contact-info-item" style="cursor:default">
+          <span class="label">Localização</span>
+          <span class="value">Sul de Santa Catarina</span>
+          <span class="arrow"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-card-eyebrow">Próximo passo</div>
+      <h3>Pronta para a sua <em>transformação?</em></h3>
+      <p>
+        Entre em contato pelo WhatsApp para agendar sua avaliação. Conversaremos sobre o seu caso, esclareceremos todas as dúvidas e indicaremos o melhor caminho — com técnica, ética e acolhimento.
+      </p>
+
+      <ul class="details">
+        <li>Avaliação personalizada e individual</li>
+        <li>Atendimento exclusivo, por horário marcado</li>
+        <li>Acompanhamento completo pós-procedimento</li>
+      </ul>
+
+      <a href="https://wa.me/5548881399910?text=Olá%20Julisbel%2C%20gostaria%20de%20agendar%20uma%20avaliação." class="whatsapp-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.7-.3z"/><path d="M20.5 3.5C18.3 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 22c-1.9 0-3.7-.5-5.2-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.8 2 13.9 2 12 2 6.5 6.5 2 12 2c2.7 0 5.2 1 7.1 2.9C21 6.8 22 9.3 22 12c0 5.5-4.5 10-10 10z"/></svg>
+        Falar pelo WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo">Julisbel Kurtz</div>
+      <div class="foot-tagline">Enfermeira Esteta · Especialista em Orelhas</div>
+      <p class="foot-desc">
+        Pioneira no Sul de Santa Catarina em Otomodelação com Fragilização da Cartilagem. Atendimento exclusivo e formação de novos profissionais.
+      </p>
+    </div>
+    <div class="foot-col">
+      <h5>Navegação</h5>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#procedimentos">Procedimentos</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Contato</h5>
+      <ul>
+        <li><a href="https://wa.me/5548881399910">(48) 8813-9991</a></li>
+        <li><a href="https://www.instagram.com/julisbelkurtz" target="_blank">@julisbelkurtz</a></li>
+        <li>Sul de Santa Catarina</li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Atendimento</h5>
+      <ul>
+        <li>Por horário marcado</li>
+        <li>Avaliação personalizada</li>
+        <li>Formação de profissionais</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 Julisbel Kurtz · Todos os direitos reservados</div>
+    <div>Enfermeira Esteta</div>
+  </div>
+</footer>
+
+<!-- ============= FLOATING WA ============= -->
+<a href="https://wa.me/5548881399910" class="float-wa" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.7-.3z"/><path d="M20.5 3.5C18.3 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 22c-1.9 0-3.7-.5-5.2-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.8 2 13.9 2 12 2 6.5 6.5 2 12 2c2.7 0 5.2 1 7.1 2.9C21 6.8 22 9.3 22 12c0 5.5-4.5 10-10 10z"/></svg>
+</a>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
