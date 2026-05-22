@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -28,7 +28,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family:'Manrope', 'Plus Jakarta Sans', system-ui, sans-serif;
   background:var(--paper);
   color:var(--verde);
   font-weight:300;
@@ -73,25 +73,37 @@ img{max-width:100%; display:block}
   .topbar{justify-content:center}
 }
 
-/* ============= NAVIGATION ============= */
+/* ============= FLUID ISLAND NAVIGATION ============= */
 nav{
-  position:sticky; top:0; z-index:100;
-  background:var(--paper);
-  border-bottom:1px solid var(--line);
-  padding:22px 6vw;
+  position:sticky; top:18px; z-index:100;
+  margin:18px auto 0;
+  width:min(1180px, calc(100% - 36px));
+  background:rgba(244,241,232,0.72);
+  backdrop-filter:blur(20px) saturate(140%);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);
+  border:1px solid rgba(196,168,128,0.22);
+  border-radius:999px;
+  padding:10px 14px 10px 28px;
   display:grid;
   grid-template-columns:1fr auto 1fr;
   align-items:center;
-  gap:40px;
-  transition:padding .3s, background .3s;
+  gap:32px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    0 6px 24px -16px rgba(42,55,48,0.18),
+    0 18px 40px -28px rgba(42,55,48,0.25);
+  transition:padding .5s var(--ease-soft), background .5s var(--ease-soft), box-shadow .5s var(--ease-soft), border-color .5s var(--ease-soft);
 }
 nav.scrolled{
-  padding:14px 6vw;
-  background:rgba(244,241,232,0.96);
-  backdrop-filter:blur(14px);
+  background:rgba(244,241,232,0.92);
+  border-color:rgba(196,168,128,0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    0 10px 30px -16px rgba(42,55,48,0.22),
+    0 24px 50px -28px rgba(42,55,48,0.32);
 }
 .nav-logo{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:24px;
   letter-spacing:.24em;
   color:var(--verde);
@@ -144,23 +156,62 @@ nav.scrolled{
   box-shadow:0 1px 0 rgba(255,255,255,0.06) inset, 0 10px 22px -14px rgba(42,55,48,0.5);
 }
 .nav-cta:hover{transform:translateY(-1px); box-shadow:0 1px 0 rgba(255,255,255,0.1) inset, 0 16px 28px -14px rgba(42,55,48,0.6)}
-.menu-toggle{display:none; background:none; border:none; cursor:pointer; color:var(--verde); font-size:22px}
 
+/* Hamburger morph button */
+.menu-toggle{
+  display:none;
+  width:38px; height:38px;
+  border-radius:50%;
+  background:rgba(196,168,128,0.10);
+  border:1px solid rgba(196,168,128,0.32);
+  cursor:pointer;
+  position:relative;
+  transition:background .5s var(--ease-soft), border-color .5s var(--ease-soft), transform .5s var(--ease-spring);
+}
+.menu-toggle:hover{background:rgba(196,168,128,0.20); transform:scale(1.04)}
+.menu-toggle .bar{
+  position:absolute; left:50%; top:50%;
+  width:16px; height:1.5px;
+  background:var(--verde-deep);
+  border-radius:2px;
+  transform-origin:center;
+  transition:transform .55s var(--ease-spring), top .55s var(--ease-spring), opacity .35s var(--ease-soft);
+}
+.menu-toggle .bar:nth-child(1){transform:translate(-50%, -5px)}
+.menu-toggle .bar:nth-child(2){transform:translate(-50%, 3px)}
+.menu-toggle[aria-expanded="true"] .bar:nth-child(1){transform:translate(-50%, -1px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] .bar:nth-child(2){transform:translate(-50%, -1px) rotate(-45deg)}
+
+/* Mobile fullscreen menu */
 @media (max-width:980px){
-  nav{grid-template-columns:auto 1fr auto; padding:16px 6vw}
-  .nav-logo{text-align:left; font-size:20px}
+  nav{grid-template-columns:auto 1fr auto; padding:8px 8px 8px 22px; gap:14px}
+  .nav-logo{text-align:left; font-size:18px}
   .nav-links{
-    position:fixed; top:100px; right:0;
+    position:fixed; inset:0;
     flex-direction:column; gap:0;
-    background:var(--paper);
-    width:100%; padding:0 6vw;
-    max-height:0; overflow:hidden;
-    transition:max-height .5s ease, padding .5s ease;
-    border-bottom:1px solid var(--line);
+    background:rgba(244,241,232,0.95);
+    backdrop-filter:blur(28px) saturate(140%);
+    -webkit-backdrop-filter:blur(28px) saturate(140%);
+    width:100%; padding:120px 8vw 48px;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .6s var(--ease-soft);
     z-index:99;
+    border:none;
+    justify-content:flex-start;
   }
-  .nav-links.open{max-height:500px; padding:24px 6vw 36px}
-  .nav-links li{padding:16px 0; border-bottom:1px solid var(--line)}
+  .nav-links.open{opacity:1; pointer-events:auto}
+  .nav-links li{
+    padding:18px 0; border-bottom:1px solid var(--line);
+    opacity:0; transform:translateY(24px) blur(4px);
+    transition:opacity .7s var(--ease-spring), transform .7s var(--ease-spring), filter .7s var(--ease-spring);
+  }
+  .nav-links.open li{opacity:1; transform:translateY(0); filter:blur(0)}
+  .nav-links.open li:nth-child(1){transition-delay:.10s}
+  .nav-links.open li:nth-child(2){transition-delay:.18s}
+  .nav-links.open li:nth-child(3){transition-delay:.26s}
+  .nav-links.open li:nth-child(4){transition-delay:.34s}
+  .nav-links a{font-size:24px !important; letter-spacing:.04em !important; font-family:'Fraunces', serif !important; text-transform:none !important; font-weight:400}
   .nav-actions{justify-content:flex-end}
   .nav-cta{padding:9px 16px; font-size:10px}
   .menu-toggle{display:block; order:3}
@@ -170,7 +221,7 @@ nav.scrolled{
 .hero{
   background:var(--paper);
   position:relative;
-  padding:90px 6vw 0;
+  padding:60px 6vw 0;
   min-height:calc(100vh - 100px);
   display:grid;
   grid-template-columns:1.05fr 1fr;
@@ -195,12 +246,13 @@ nav.scrolled{
 .hero-mark::before{content:''; width:7px; height:7px; background:var(--nude-deep); border-radius:50%; box-shadow:0 0 10px rgba(196,168,128,0.5)}
 
 .hero h1{
-  font-family:'Cormorant Garamond', serif;
-  font-size:clamp(48px, 6.5vw, 86px);
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
+  font-size:clamp(52px, 7vw, 96px);
   font-weight:400;
-  line-height:1;
+  font-variation-settings:"opsz" 144, "SOFT" 50;
+  line-height:0.98;
   color:var(--verde-deep);
-  letter-spacing:-.015em;
+  letter-spacing:-.022em;
   margin-bottom:36px;
 }
 .hero h1 em{
@@ -231,7 +283,7 @@ nav.scrolled{
 .hero-meta-item:last-child{border-right:none}
 .hero-meta-item:first-child{padding-left:0}
 .hero-meta-item .num{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:36px;
   line-height:1;
   color:var(--verde-deep);
@@ -251,6 +303,7 @@ nav.scrolled{
 .btn-primary{
   --btn-bg: var(--verde-deep);
   --btn-fg: var(--cream);
+  --mx: 0px; --my: 0px;
   background:var(--btn-bg);
   color:var(--btn-fg);
   padding:10px 12px 10px 28px;
@@ -260,21 +313,24 @@ nav.scrolled{
   text-transform:uppercase; font-weight:500;
   cursor:pointer; text-decoration:none;
   display:inline-flex; align-items:center; gap:18px;
-  transition:transform .5s var(--ease-spring), background .5s var(--ease-soft), color .5s var(--ease-soft), box-shadow .5s var(--ease-soft);
+  transition:transform .55s var(--ease-spring), background .5s var(--ease-soft), color .5s var(--ease-soft), box-shadow .5s var(--ease-soft);
   box-shadow:0 1px 0 rgba(255,255,255,0.06) inset, 0 14px 30px -18px rgba(42,55,48,0.55);
-  font-family:'Plus Jakarta Sans', sans-serif;
+  font-family:'Manrope', sans-serif;
+  transform:translate3d(var(--mx), var(--my), 0);
+  will-change:transform;
 }
-.btn-primary:hover{transform:translateY(-1px); box-shadow:0 1px 0 rgba(255,255,255,0.10) inset, 0 22px 38px -18px rgba(42,55,48,0.65)}
-.btn-primary:active{transform:translateY(0) scale(.985)}
+.btn-primary:hover{box-shadow:0 1px 0 rgba(255,255,255,0.10) inset, 0 22px 38px -18px rgba(42,55,48,0.65)}
+.btn-primary:active{transform:translate3d(var(--mx), var(--my), 0) scale(.985)}
 .btn-primary .arrow{
   width:34px; height:34px;
   border-radius:50%;
   background:rgba(255,255,255,0.10);
   display:inline-flex; align-items:center; justify-content:center;
-  transition:transform .5s var(--ease-spring), background .5s var(--ease-soft);
+  transition:transform .55s var(--ease-spring), background .5s var(--ease-soft);
 }
-.btn-primary:hover .arrow{transform:translate(2px,-1px); background:rgba(255,255,255,0.18)}
-.btn-primary svg{width:13px; height:13px}
+.btn-primary:hover .arrow{transform:translate(3px,-1px) scale(1.05); background:rgba(255,255,255,0.18)}
+.btn-primary svg{width:13px; height:13px; transition:transform .5s var(--ease-spring)}
+.btn-primary:hover svg{transform:translateX(1px)}
 .btn-text{
   color:var(--verde);
   text-decoration:none;
@@ -316,7 +372,7 @@ nav.scrolled{
   z-index:2;
 }
 .hero-image-caption .right{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-style:italic;
   font-size:15px;
   letter-spacing:.02em;
@@ -347,7 +403,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
 }
 .section-eyebrow::before{content:''; width:6px; height:6px; background:var(--nude-deep); border-radius:50%}
 .section-title{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:clamp(40px, 5vw, 68px);
   font-weight:400; line-height:1.05;
   color:var(--verde-deep); margin-bottom:32px;
@@ -380,7 +436,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
 }
 .authority-item em{
   display:block;
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-style:italic;
   font-size:16px;
   color:var(--nude-deep);
@@ -425,7 +481,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
 }
 .about-image-label em{
   display:block;
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:14px;
   font-style:italic;
   color:var(--nude-deep);
@@ -435,7 +491,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
   font-weight:400;
 }
 .about-text .lead{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:24px; font-style:italic;
   color:var(--verde-deep); line-height:1.45;
   margin-bottom:30px;
@@ -458,7 +514,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
   flex-wrap:wrap; gap:20px;
 }
 .about-signature .name{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:24px;
   font-style:italic;
   color:var(--verde-deep);
@@ -511,17 +567,30 @@ section{padding:140px 6vw; position:relative; z-index:2}
   display:grid;
   grid-template-columns:80px 1fr 1.3fr auto;
   gap:60px;
-  padding:40px 0;
+  padding:42px 24px;
   border-top:1px solid rgba(196,168,128,0.18);
   align-items:start;
   cursor:pointer;
-  transition:padding-left .6s var(--ease-spring), background .5s var(--ease-soft);
+  transition:padding-left .6s var(--ease-spring), background .55s var(--ease-soft);
   position:relative;
+  border-radius:18px;
 }
+.proc-item::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:18px;
+  background:rgba(196,168,128,0.04);
+  opacity:0;
+  transition:opacity .55s var(--ease-soft);
+  pointer-events:none;
+  z-index:-1;
+}
+.proc-item:hover::before{opacity:1}
 .proc-item:last-child{border-bottom:1px solid rgba(196,168,128,0.18)}
-.proc-item:hover{padding-left:20px}
+.proc-item:hover{padding-left:36px}
 .proc-num{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:32px;
   color:var(--nude);
   font-weight:400;
@@ -529,7 +598,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
   letter-spacing:.02em;
 }
 .proc-title{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:30px;
   font-weight:500;
   color:var(--cream);
@@ -619,7 +688,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
 .experience-item:last-child{border-right:none}
 .experience-item:hover{background:var(--cream-warm)}
 .experience-step{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:14px;
   color:var(--nude-deep);
   font-style:italic;
@@ -627,7 +696,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
   font-weight:400;
 }
 .experience-item h4{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:24px;
   font-weight:500;
   color:var(--verde-deep);
@@ -662,7 +731,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
   align-items:center;
 }
 .editorial-text .quote{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:clamp(30px, 3.5vw, 44px);
   font-style:italic;
   line-height:1.4;
@@ -714,7 +783,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
   text-align:right;
 }
 .ig-handle .at{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:24px;
   font-style:italic;
   color:var(--nude-deep);
@@ -827,7 +896,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
   font-weight:500;
 }
 .contact-info-item .value{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:24px;
   font-weight:500;
   letter-spacing:.005em;
@@ -839,8 +908,15 @@ section{padding:140px 6vw; position:relative; z-index:2}
 
 .contact-card{
   background:rgba(230,229,221,0.04);
-  border:1px solid rgba(196,168,128,0.2);
+  border:1px solid rgba(196,168,128,0.22);
   padding:60px 50px;
+  border-radius:28px;
+  /* Double-bezel via shadows (dark theme variant) */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 0 0 7px rgba(196,168,128,0.04),
+    0 0 0 8px rgba(196,168,128,0.18),
+    0 30px 70px -30px rgba(0,0,0,0.5);
 }
 .contact-card-eyebrow{
   font-size:10px;
@@ -851,7 +927,7 @@ section{padding:140px 6vw; position:relative; z-index:2}
   font-weight:500;
 }
 .contact-card h3{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:36px;
   font-weight:400;
   line-height:1.15;
@@ -928,7 +1004,7 @@ footer{
   border-bottom:1px solid rgba(230,229,221,0.08);
 }
 .foot-logo{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:30px;
   letter-spacing:.2em;
   color:var(--cream);
@@ -1092,7 +1168,7 @@ footer{
   margin:0 auto;
 }
 .pain-cta .punch{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-size:clamp(26px, 3.4vw, 38px);
   line-height:1.25;
   color:var(--verde-deep);
@@ -1153,7 +1229,7 @@ footer{
 }
 .test-stars svg{width:16px; height:16px; fill:currentColor}
 .test-quote{
-  font-family:'Cormorant Garamond', serif;
+  font-family:'Fraunces', 'Cormorant Garamond', serif;
   font-style:italic;
   font-size:18px;
   line-height:1.55;
@@ -1231,7 +1307,10 @@ footer{
   </a>
   <div class="nav-actions">
     <a href="#contato" class="nav-cta">Agendar</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
   </div>
 </nav>
 
@@ -1262,7 +1341,7 @@ footer{
     <div class="hero-cta-group">
       <a href="#contato" class="btn-primary">
         Agendar Avaliação
-        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
       </a>
       <a href="#procedimentos" class="btn-text">Conhecer Procedimentos</a>
     </div>
@@ -1308,28 +1387,28 @@ footer{
   <div class="pain-grid">
     <div class="pain-card">
       <div class="ico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg>
       </div>
       <p>Sente vergonha das suas orelhas e evita prender o cabelo, fazer coque ou tirar fotos de perfil.</p>
     </div>
 
     <div class="pain-card">
       <div class="ico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>
       </div>
       <p>Já pensou em otoplastia tradicional, mas tem receio dos cortes, da cirurgia e da recuperação.</p>
     </div>
 
     <div class="pain-card">
       <div class="ico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6M4.22 4.22l4.24 4.24m7.08 7.08 4.24 4.24M1 12h6m10 0h6M4.22 19.78l4.24-4.24m7.08-7.08 4.24-4.24"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6M4.22 4.22l4.24 4.24m7.08 7.08 4.24 4.24M1 12h6m10 0h6M4.22 19.78l4.24-4.24m7.08-7.08 4.24-4.24"/></svg>
       </div>
       <p>Seu lóbulo rasgou ou alargou com o tempo e não sabe qual procedimento resolve o seu caso.</p>
     </div>
 
     <div class="pain-card">
       <div class="ico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
       </div>
       <p>É profissional da saúde e quer se especializar em Otomodelação para ampliar sua atuação estética.</p>
     </div>
@@ -1339,7 +1418,7 @@ footer{
     <p class="punch">O problema não é a sua orelha. É encontrar a <em>profissional certa</em> para cuidar dela.</p>
     <a href="#contato" class="btn-primary">
       Agendar Avaliação
-      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
     </a>
   </div>
 </section>
@@ -1400,7 +1479,7 @@ footer{
         <span class="tag">Sem cirurgia · Resultado permanente</span>
       </div>
       <div class="proc-arrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </div>
     </div>
 
@@ -1414,7 +1493,7 @@ footer{
         <span class="tag">Indicado para recém-nascidos</span>
       </div>
       <div class="proc-arrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </div>
     </div>
 
@@ -1428,7 +1507,7 @@ footer{
         <span class="tag">Correção definitiva</span>
       </div>
       <div class="proc-arrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </div>
     </div>
 
@@ -1442,7 +1521,7 @@ footer{
         <span class="tag">Sem cortes · Sem anestesia</span>
       </div>
       <div class="proc-arrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </div>
     </div>
 
@@ -1456,7 +1535,7 @@ footer{
         <span class="tag">Ácido hialurônico</span>
       </div>
       <div class="proc-arrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </div>
     </div>
 
@@ -1470,7 +1549,7 @@ footer{
         <span class="tag">Lóbulo & cartilagem</span>
       </div>
       <div class="proc-arrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </div>
     </div>
   </div>
@@ -1711,26 +1790,64 @@ footer{
 </a>
 
 <script>
+/* ===== Nav "scrolled" via IntersectionObserver (no scroll listener) ===== */
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-});
+const navSentinel = document.createElement('div');
+navSentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:60px;pointer-events:none';
+document.body.insertBefore(navSentinel, document.body.firstChild);
+new IntersectionObserver(([entry]) => {
+  nav.classList.toggle('scrolled', !entry.isIntersecting);
+}, {threshold: 0}).observe(navSentinel);
 
+/* ===== Hamburger morph + fullscreen menu ===== */
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
-menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+function setMenu(open){
+  navLinks.classList.toggle('open', open);
+  menuToggle.setAttribute('aria-expanded', open);
+  menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+menuToggle.addEventListener('click', () => {
+  setMenu(menuToggle.getAttribute('aria-expanded') !== 'true');
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
-const observer = new IntersectionObserver((entries) => {
+/* ===== Scroll reveal with blur (IntersectionObserver) ===== */
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
-      observer.unobserve(e.target);
+      revealObserver.unobserve(e.target);
     }
   });
-}, {threshold: 0.1});
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}, {threshold: 0.12, rootMargin: '0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ===== Magnetic button hover (subtle translation tracking cursor) ===== */
+document.querySelectorAll('.btn-primary, .nav-cta').forEach(btn => {
+  btn.addEventListener('pointermove', (e) => {
+    const r = btn.getBoundingClientRect();
+    const x = (e.clientX - r.left - r.width / 2) / r.width;
+    const y = (e.clientY - r.top - r.height / 2) / r.height;
+    btn.style.setProperty('--mx', `${x * 4}px`);
+    btn.style.setProperty('--my', `${y * 3}px`);
+  });
+  btn.addEventListener('pointerleave', () => {
+    btn.style.setProperty('--mx', '0px');
+    btn.style.setProperty('--my', '0px');
+  });
+});
+
+/* ===== Staggered reveal for cards inside same parent ===== */
+document.querySelectorAll('.pain-grid, .test-grid, .ig-grid, .experience-grid, .proc-list, .authority-grid').forEach(grid => {
+  Array.from(grid.children).forEach((child, i) => {
+    if (!child.classList.contains('authority-divider')) {
+      child.style.setProperty('transition-delay', `${i * 70}ms`);
+    }
+  });
+});
 </script>
 
 </body>
